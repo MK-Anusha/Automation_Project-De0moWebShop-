@@ -4,6 +4,7 @@ import org.automation.base.Base_Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * 
@@ -14,9 +15,14 @@ public class Register_Page extends Base_Page {
 
 	public Register_Page(WebDriver driver) {
 		super(driver);
+		PageFactory.initElements(driver, this);
 	}
 
 	// ================Web elements or Property================
+	
+	@FindBy(linkText="Register") 
+	private WebElement registerLink;
+	
 	@FindBy(id = "gender-male")
 	private WebElement maleRadioButton;
 
@@ -42,6 +48,11 @@ public class Register_Page extends Base_Page {
 	private WebElement registerButton;
 
 	//================Getters or Public services================
+	
+	public WebElement getRegisterLink() {
+		return registerLink;
+	}
+	
 	public WebElement getMaleRadioButton() {
 		return maleRadioButton;
 	}
@@ -75,7 +86,7 @@ public class Register_Page extends Base_Page {
 	}
 	
 	//================Business Logic or Action methods or Behavior================
-	public void registerUser(String gender,String firstName,String lastName,String emailId,String password) {
+	public void registerUser(String gender,String firstName,String lastName,String emailId,String password,String confirmPassword) {
 		if(gender.equalsIgnoreCase("MALE")) 
 			maleRadioButton.click();
 		else 
@@ -89,7 +100,7 @@ public class Register_Page extends Base_Page {
 		passwordTextField.clear();
 		passwordTextField.sendKeys(password);
 		confirmPasswordTextField.clear();
-		confirmPasswordTextField.sendKeys(password);
+		confirmPasswordTextField.sendKeys(confirmPassword);
 		registerButton.click();		
 	}
 }

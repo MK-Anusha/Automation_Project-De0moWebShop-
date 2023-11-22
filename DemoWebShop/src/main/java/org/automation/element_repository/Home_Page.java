@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 /***
  * 
@@ -15,10 +16,11 @@ public class Home_Page extends Base_Page {
 
 	public Home_Page(WebDriver driver) {
 		super(driver);
+		PageFactory.initElements(driver, this);
 	}
 
 	//================Web elements or Property================
-	@FindBy(linkText="Log out") 
+	@FindBy(xpath="//a[@href=\"/logout\"]") 
 	private WebElement logoutButton;
 	
 	//================Getters or Public services================

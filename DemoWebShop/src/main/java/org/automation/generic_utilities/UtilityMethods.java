@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 
@@ -21,6 +22,13 @@ import org.testng.ITestResult;
  *
  */
 public class UtilityMethods implements FrameworkConstants {
+
+	private WebDriver driver;
+
+	public UtilityMethods(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+		this.driver=driver;
+	}
 
 	/**
 	 * This method is used to switch the driver control to a window based on the

@@ -21,6 +21,7 @@ public abstract class Base_Page {
 		this.driver=driver;
 	}
 	
+	
 	//================Web elements or Property================
 	@FindBy(linkText="Log in") 
 	private WebElement loginLink;
@@ -121,4 +122,5 @@ public abstract class Base_Page {
 		return demoWebShopLogo;
 	}
 		
+	
 }

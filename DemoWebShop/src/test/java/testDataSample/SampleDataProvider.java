@@ -31,14 +31,14 @@ public class SampleDataProvider {
 		String lastName = registrationData[2];
 		String emailId = registrationData[3];
 		String password = registrationData[4];
-		
+		String confirmPassword=registrationData[5];
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.get(readData.readDataFromPropertyFile("url"));
 		Login_Page loginPage = new Login_Page(driver);
 		loginPage.getRegisterLink().click();
 		Register_Page registerPage = new Register_Page(driver);
-		registerPage.registerUser(gender, firstName, lastName, emailId, password);
+		registerPage.registerUser(gender, firstName, lastName, emailId, password,confirmPassword);
 		driver.quit();
 	}
 }

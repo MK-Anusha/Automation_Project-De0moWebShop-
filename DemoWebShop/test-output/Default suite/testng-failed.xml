@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCaseSample.TC_SampleTestCase_Test">
+      <class name="appreal_and_shoes_module.TC_APPREAL_and_SHOES_015">
         <methods>
-          <include name="sample"/>
           <include name="browserSetUp"/>
           <include name="logoutOfApplication"/>
           <include name="browserTearDown"/>
+          <include name="ViewApperalAndShoesProductInCart"/>
           <include name="loginToApplication"/>
         </methods>
-      </class> <!-- testCaseSample.TC_SampleTestCase_Test -->
+      </class> <!-- appreal_and_shoes_module.TC_APPREAL_and_SHOES_015 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
